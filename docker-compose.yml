@@ -2,21 +2,63 @@ version: '3.9'
 
 services:
   nginx:
-    container_name: nginx-lab
+    container_name: nginx-lab.dev
     hostname: nginx-lab.dev
-    image: nginx
+    build:
+      context: ./files/nginx
+      dockerfile: Dockerfile
     restart: "always"
+    depends_on:
+      - flask1
+      - flask2
+      - flask3
     volumes:
-      - ./files/conf/nginx.conf:/etc/nginx/nginx.conf
-      - ./files/conf/conf.d:/etc/nginx/conf.d
+      - ./files/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./files/nginx/conf/conf.d:/etc/nginx/conf.d
     ports:
-      - "8080:80"
-    networks:
-      - "frontend"
+      - "80:80"
     environment:
       - NGINX_HOST=nginx-lab.dev
       - NGINX_PORT=80
-    
-networks:
-  frontend: {}
+    links:
+      - "flask1"
+      - "flask2"
+      - "flask3"
+    networks:
+      - flasklab
 
+  flask1:
+    container_name: flask1-app.dev
+    hostname: flask1-lab.dev
+    build:
+      context: ./files/app
+      dockerfile: Dockerfile
+    restart: "unless-stopped"
+    ports:
+      - "5001:5000"
+    networks:
+      - flasklab
+  flask2:
+    container_name: flask2-app.dev
+    hostname: flask2-lab.dev
+    build:
+      context: ./files/app
+      dockerfile: Dockerfile
+    restart: "unless-stopped"
+    ports:
+      - "5002:5000"
+    networks:
+      - flasklab
+  flask3:
+    container_name: flask3-app.dev
+    hostname: flask3-lab.dev
+    build:
+      context: ./files/app
+      dockerfile: Dockerfile
+    restart: "unless-stopped"
+    ports:
+      - "5003:5000"
+    networks:
+      - flasklab
+networks:
+  flasklab:
