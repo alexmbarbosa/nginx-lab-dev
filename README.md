@@ -8,10 +8,11 @@ This is an useful project for using when you need a lab for testing your backend
 
 This lab has the following structure:
 
-* **Docker/dockercompose**:
+### **Docker/docker-compose**:
 
-    * **NGINX:**
+**NGINX:**
 
+```bash
     nginx
     ├── conf
     │   ├── conf.d
@@ -19,18 +20,21 @@ This lab has the following structure:
     │   │   └── flask.conf
     │   └── nginx.conf
     └── Dockerfile
+```
 
+**Application (flask as *example*):**
 
-    * **Application (flask as example):**
-
+```bash
     app
     ├── app.py
     ├── Dockerfile
     └── requirements.txt
+```
 
-    You can add or modify [NGINX virtualhosts](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/) inside of `conf.d` according to your environment, customizing the `nginx.conf` as well.
+You can add or modify [NGINX virtualhosts](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/) inside of `conf.d` according to your environment, customizing the `nginx.conf` as well.
 
-    I have used my [flask docker project](https://hub.docker.com/repository/docker/alexmbarbosa/flask-python3/general) as backend app, feel free to change it using your own source-code.
+I have used my [flask docker project](https://hub.docker.com/repository/docker/alexmbarbosa/flask-python3/general) as backend app, feel free to change it using your own source-code.
+
 
 ## How to use this lab
 
