@@ -4,7 +4,7 @@ This is a Docker project orchestrating an NGINX Load Balancer to handle multiple
 
 ## Context
 
-This is an useful project for using when you need a lab for testing your backends behind a load balanacer.
+This is an useful project for using when you need a lab for testing your backends behind a load balancer.
 
 This lab has the following structure:
 
@@ -33,7 +33,7 @@ This lab has the following structure:
 
 You can add or modify [NGINX virtualhosts](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/) inside of `conf.d` according to your environment, customizing the `nginx.conf` as well.
 
-I have used my [flask docker project](https://hub.docker.com/repository/docker/alexmbarbosa/flask-python3/general) as backend app, feel free to change it using your own source-code.
+I used my [flask docker project](https://hub.docker.com/repository/docker/alexmbarbosa/flask-python3/general) as backend app, feel free to change it using your own source-code.
 
 
 ## How to use this lab
