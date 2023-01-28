@@ -33,7 +33,7 @@ This lab has the following structure:
 
 You can add or modify [NGINX virtualhosts](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/) inside of `conf.d` according to your environment, customizing the `nginx.conf` as well.
 
-I used my [flask docker project](https://hub.docker.com/repository/docker/alexmbarbosa/flask-python3/general) as backend app, feel free to change it using your own source-code.
+I used my [flask docker project](https://hub.docker.com/repository/docker/alexmbarbosa/flask-python3/general) as a backend app, feel free to change it using your own source code.
 
 
 ## How to use this lab
